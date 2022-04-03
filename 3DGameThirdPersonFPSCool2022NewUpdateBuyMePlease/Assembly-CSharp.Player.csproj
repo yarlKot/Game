@@ -53,8 +53,9 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DefaultCharacterMovement.cs" />
     <Compile Include="Assets\Scripts\CameraRotation.cs" />
+    <Compile Include="Assets\Scripts\DefaultCharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\PathFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -272,6 +273,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="NavMeshComponentsEditor">
+      <HintPath>Library\ScriptAssemblies\NavMeshComponentsEditor.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
@@ -634,6 +638,10 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{3A3E2435-A843-E85B-883B-E59E3BB22637}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{80327624-B646-01AB-B2BF-E0725DA90079}</Project>
+      <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

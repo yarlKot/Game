@@ -10,8 +10,7 @@ public class DefaultCharacterMovement : MonoBehaviour
     private Rigidbody rb;
     public float moveSpeed;
     public bool grounded;
-    private float h;
-    private float v;
+    private float health;
     private Transform mainCamera;
     // Start is called before the first frame update
     void Start()
@@ -23,45 +22,6 @@ public class DefaultCharacterMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        /*if (isEnableDefaultMovement&grounded)
-        {
-            direction = Vector3.zero;
-            if (Input.GetKey(KeyCode.D))
-            {
-                direction.x += 1;
-            }
-            else
-            {
-                direction.x += 0;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                direction.x += -1;
-            }
-            else
-            {
-                direction.x += 0;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                direction.z += 1;
-            }
-            else
-            {
-                direction.z += 0;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                direction.z += -1;
-            }
-            else
-            {
-                direction.z += 0;
-            }
-            direction = direction.normalized;
-            rb.velocity = direction*moveSpeed;
-        }*/
         Vector3 camF = mainCamera.forward;
         Vector3 camR = mainCamera.right;
 
@@ -71,14 +31,7 @@ public class DefaultCharacterMovement : MonoBehaviour
 
 
         movingVector = Vector3.ClampMagnitude(camF.normalized * Input.GetAxis("Vertical") * moveSpeed + camR.normalized * Input.GetAxis("Horizontal") * moveSpeed, moveSpeed);
-
-
-
-
-
         rb.velocity = new Vector3(movingVector.x, rb.velocity.y, movingVector.z);
-
-
         rb.angularVelocity = Vector3.zero;
 
     }
